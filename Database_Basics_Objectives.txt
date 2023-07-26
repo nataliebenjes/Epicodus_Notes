@@ -1,0 +1,136 @@
+RAM=stored on your computer
+
+Database Structure
+bunch of linked spreadsheets
+
+Primary Key: unique ID for that specific row on that specific table
+
+Launch MySQL `mysql -uroot -pepicodus`
+
+check database `SELECT DATABASE();`
+create database `CREATE DATABASE new_database`
+list databases `SHOW DATABASES;`
+delete table `DROP TABLE`
+add auto incrementing ID no `ALTER TABLE contacts ADD id serial PRIMARY KEY`
+connect to database `USE new_database`
+add new rows into database `INSERT INTO contacts (name, age, birthday) VALUES ('WES', 43, '1969-05-01');`
+see MySQL commands `\?`
+
+varchar: SQL string
+datetime: includes date & time
+
+MySqlConnection constructor expects a database connection string
+  -server
+  -uid (often 'root')
+  -pwd
+  -port
+  -database
+
+When connecting to database:
+-Open a database connection;
+-Construct a SQL query;
+-Return the query results from the database;
+-Close the connection.
+
+Data Reader Object:
+-READS data response by our database. To create:
+`MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;`
+
+
+have two databases; development and test database
+
+ExecuteNonQuery() 
+  -modify data instead of returning data
+ExecuteReader()
+  -retrieve data
+
+value type
+  -when variable stores a value type, it stores the actual data, not just a reference to it
+  -for C# to consider two objects as same, values must be same
+  -public override bool Equals()
+
+Type casting
+  -converting one data type into another
+  -Item newItem = (Item) otherItem;
+  -need to do this if comparing two objects with C# to see if they are equal
+
+  Hash code
+    -unique identifier
+    -hash based collections include dictionaries and hash tables
+    -Hasing Function
+      -takes input, changes it, returns unique output
+
+Schema
+  -database structure that represents the way the database is built
+
+SQL Designer
+  -need foreign keys to add relationships between tables
+  -SQL singular syntax of a foreign key (trick_or_treater_id)
+
+  Entity Framework Core
+  setup
+    -add dependencies
+    -remove MySqlConnector
+    -add databse connection string
+    -no DatabaseConfig.cs file
+    -entity: single database table
+    -database context: entire database as model in our app
+
+Object-Relational Mapping
+  -allows us to query and manipulate database data in object oriented way
+  -don't have to deal with Raw SQL
+
+-lambda expression. In short, a lambda expression is just a way to write an anonymous function in a condensed fashion
+
+Language-Integrated Queries
+  -LINQ
+  -grab values from datasets and display them in views
+
+
+CRUD
+create  
+  -form to supply information about new Item
+  -functionality to submit form
+  1.GET action to display form
+  2.POST action to manage form submission
+
+HTML helper methods
+  -make it easier to render HTML in a .cshtml file
+  -strongly typed contain "For". Not strongly typed do not contain "For"
+    -strongly typed to check errors at compile time
+  Links
+    HTMLActionLink
+      -if no controller is specified, an ActionLink() will route by default to the controller that matches the view it is in
+  Model Directive
+    -`@model ToDoList.Models.Item`
+    -what type of data will be passed into the view from the controller route
+    -only 1 model directive per view
+
+Lambda expression
+  (parameters) => expression
+  anonymous function
+
+Navigation Property
+  -property on one entity that includes a reference to another entity
+  -they are never saved in the database
+  -reference navigation property
+    -holds reference to a single related entity
+
+ViewBag
+  -way to send temporary data from a controller to a view
+  -such as custom titles
+
+What is Entity Framework Core?
+  -still .NET
+  -No MySQL community server
+  -HTMLActionLinks
+  -Onject Relational Mapping
+    -turns database info into objects of the language that we're working with
+  
+What is a database context?
+  -represents an entire Database
+What is an entity?
+  -represents a single database table
+What is LINQ and how is it helpful?
+  -way to grab values from dataset and add them to views
+What is an HTML helper method? Name a few examples and how they can be used in a view. 
