@@ -1,0 +1,120 @@
+imparatitve programming
+  -tell program what to do and how we want it done
+Declarative programming
+  -when writing functional code
+  -tell program what end result should be, then let program decide how to get there
+  -easier for other programmers to read
+
+
+React
+  -functional, not object oriented
+    -pure functions
+      -given a specific input, a pure function always returns the same output. ALWAYS returns an output
+        function addOne(num) {
+          return num + 1;
+        }
+        NOT functions that include "Math.random()"
+      -cannot have side effects... no changes to something outside the function(UI functions that change the DOM)
+      -cannot rely on external vairables or stateless
+      -easier to test
+      -fewer bugs
+    -higher class functions
+    -first order functions
+    -immutability
+      -can't change
+    -closures
+      - can give you access to an outer function's scope from an inner function
+      -to use a closure, define a function inside another function and expose it (return it or pass it into another function)
+    -currying functions
+      -take a function with multiple arguments and rewrite it as a series of functions, each with one argument
+      -more reusable and more flexible
+    -recusion
+    -composition over inheritance
+functional programs
+  -stateless
+    => no longer store info as objects
+  -what do objects DO
+  -don't assign values to variables
+  -OOP uses inheritance to give many objects functions, FP uses "composition"
+testing functional code
+  -still write tests using Jest
+  -update ESLint configuration to include functional programming rules
+using node in command line
+
+Assigning functions as arguments (callback)
+  -function expression: an anonymous function is stored inside a variable to be called later
+    `const funkyVariable = function(arg) {
+      return arg;
+    }
+
+    funkyVariable("Hello!");`
+Functions returning functions
+  -higher order function = function that returns another function
+    > function doAThing() {
+    ... return function() {
+    ... return "A thing was done."
+    ... }
+    ... }
+    undefined
+    > doAThing();
+    [Function (anonymous)]
+    //need this second set of parenths to call inner function
+    > doAThing()();
+    'A thing was done.'
+
+map()
+  loop instead of map():
+    const numArray = [1,2,3,4,5];
+    let doubledArray = {};
+    numArray.forEach(function(element){
+      doubledArray.push(element * 2);
+    });
+  map() version:
+    const numArray = [1,2,3,4,5];
+    const doubledArray = numArray.map(function(element){
+      return element * 2;
+    });
+  with arrow:
+    const doubledArray = numArray.map (e => e * 2);
+  don't need to use return statement with arrow functions
+reduce()
+  const numArray = [3, 7, 5];
+  const summedArray = numArray.reduce(function(currentValue, element){
+    return element + currentValue;
+  }, 0)
+  whenever you want to "reduce" an array down to a single element
+filter()
+  const numArray = [7, 14, 42, 8];
+  const filteredArray = numArray.filter9e => e> 10);
+  filter an array based on certain conditions
+Recusion
+  non-recusrive example:
+    let counter = 0
+    for (let i = 0; i < 3 ; i++) {
+      counter += 1
+    }
+  same thing recusrively
+    const incrementCounter = (counter) => {
+      if (counter >= 3) {
+        return counter
+      } else {
+        console.log(counter);
+        return incrementCounter(counter + 1);
+      } 
+    }
+    incrementCounter(0);
+  base case: the finsal condition of a successfully called recusrive function
+  termination case: a contidional that's called if something goes wrong: prevents infinite loop
+  recusion: the part of the function where the magic happens and the function calls itself
+
+  tail call optimization
+    return value of a function is computed instead of allocating the entire function to the stack
+
+State:
+  anything that we are asking the computer to remember
+  -we want our functions to be stateless
+  observer pattern
+    when state changes, observer is notified
+    observer pattern happens when observer is listening to state changes
+  pubsub pattern
+    an object can post to the intermediary while observers subscribe to it

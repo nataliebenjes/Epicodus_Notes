@@ -1,0 +1,98 @@
+* using create-react-app:CLI
+
+* using JSX (combo of JS and HTML)
+
+*building both functional and class components
+
+* Using props and prop types
+
+* adding local and shared state to a basic React app
+
+* Other important concepts such as binding functions, unidirectional data flow, reusing components, & passing dat through callbacks
+
+React :
+* component based
+* Declaritive
+  -when we write the end result, instread of every step to get to that end result
+* Data Model synchronization
+  when we update data in our app, UI will automatically update to reflect that change
+
+* The efficient virtual DOM
+* more singel page apps
+* React Native for mobile apps
+
+The virtual DOM
+* DOM is a language-independent model of objects that represent the structure of our page
+  -JS and Web APIs can change the DOM so that is no longer matches the HTML
+*virtual DOM is React's internal draft of the DOM
+  1. React creates its own Virtual DOM
+  2. React compares the Actual DOM to its Virtual DOM
+  3. React calculates changes: reconsiliation
+  4. React updates the Actual DOM only once
+  5. repeat
+
+`npx create-react-app help-queue`
+*npx executes packages
+- index.js is entrypoint for application
+
+-index.css global stylesheet. global stylesheet isn't good practice through
+-logo.svg 
+-reportWebVitals.js : ignore or delete. for performance measuring
+-setupTests.js : test that React components load as expected : ignore or delete
+-package.json
+
+-webpack and React
+  -webpack recursively manages all app dependencies and bundle them when we run `npm start`
+  -index.js is webpack's entry point
+  -index.js calls the root.rnder() method, which speicfies that the App component should be rendered into our index.html files `root` div identification
+  -`App.js` will be rendered in the root div id
+
+React components
+  -function components
+    import React from 'react';
+    `function ThisIsAFunctionalComponent(){
+      return (
+        <div>
+        //jsx code
+        </div>
+      );
+    }
+    export default ThisIsAFunctionalComponent;
+    `
+  -class components
+    -whenver we need to add state to a component
+
+      `import React, { Component } from 'react';
+
+      class ThisIsAClassComponent extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {};
+        }
+        render() {
+          return (
+          );
+        }
+      }
+      export default ThisIsAClassComponent;`
+
+    -class components have a constructor, takes in `props`
+    -`super` is called to access parent class constructor
+  -paretn component : root
+
+syntactic sugar
+  -when a language or library provides an easier way to write code
+  -such as HTML
+
+separation of concerns
+  -previously we have separated UI with Buisness logic
+  -react only cares about presentation. only the view layer. ok to use Js and html together
+Props:
+  -pass down info from parent element to child element: single source of truth
+  -read-only
+  -prop types decrease chances of diplaying wrong info
+  -`import PropTypes from "prop-types";`
+
+Using external stylesheets in React
+  -global style rules should go in index.css
+  -stylesheets for individual components have very specific individuals

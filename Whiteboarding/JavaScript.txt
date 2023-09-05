@@ -1,0 +1,11 @@
+sleep function with setTimeout()
+
+`function simpleFunction() {
+    console.log("this text here");
+}
+
+function delayedFunction(){
+    setTimeout(simpleFunction, 5000);
+}
+
+delayedFunction();` will display console message in 5 seconds
