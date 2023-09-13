@@ -1,0 +1,22 @@
+setState()
+  when we want to know about current state and props, pass in the following arrow function:
+    (state, props) => stateChange
+why would we want to know about current state?
+  -we want to toggle a boolean: to toggle it to its opposite state
+  -We want to increment or decrement a value: counter that could be incremented by one every time you click a value.
+  -We want to update the sate of a game
+
+UUID: uninique id
+  -32 chars
+  -industry standard JS library
+  -`import { v4 } from 'uuid';
+
+unidirectional data flow
+  -in react, data can only flow from parent to child component
+  -can only pass props DOWNNN
+  -we need callbacks
+    1. define a method in parent component that has state
+    2. parent component passes this method into child component as a prop. functions can be props just like any other  data types
+    3. we will add this method to a function in our child component in the form of a callbacks
+    4. when child executes the function that contains the parent component's callback, the method in the parent component is invoked.
+  -prefix prop is `on`

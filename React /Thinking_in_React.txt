@@ -1,0 +1,24 @@
+https://react.dev/learn/thinking-in-react
+
+step 1
+Break the UI into a component hierarchy
+
+step 2
+build a static version in react
+
+step 3
+find the minimal but complete representation of UI state
+
+  things that are state:
+  1. search text : changes over time and isn't computed from anything
+  2. value of checkbox
+  
+4. identify where your state should live
+  1. identify every component that renders something based on that state
+  2. find their closest common parent component
+  3. dicide where the state should live
+    -
+
+5. Add inverse data flow
+  -to support changing state according to user input
+  -in component that will have state changed, add "onChange" event handlers and set the parent state from them

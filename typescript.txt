@@ -1,0 +1,6 @@
+1. Type Annotations:
+  -define Props and State using `CounterProps` & `CounterState` interfaces
+  -adding type annotations for props, state, and methods where necessary.
+
+2. Constructor and super
+  -
