@@ -1,0 +1,59 @@
+Hooks
+  -functions that let let you hook into react state and lifecyc;e features
+  -hooks don't work inside classes
+
+useState
+  //initialize useState with the number 0
+  const [counter, setCounter] = useState(0);
+
+  then use setCounter to change state
+
+useEffect
+
+  useEffect(() => {
+    console.log("effect!");
+    document.title = counter;
+  }, [counter]);
+
+  counter is dependency array
+    -contain state variables with props within in
+    -if those values within that array have changed, apply state change
+    - if you want it to only run once, make dependency array empty
+
+
+NoSQL
+  -big stores of data
+  -non relational
+  -no schema
+  -no delarative query language
+  -BASE approach
+  -not build for complex queries
+  -multiple copies of the same database across a region
+  
+  formats stored
+    -key value pairs
+    -graphs
+    -wide columns
+    -docs
+  -fireStore data can easily map over JavaScript objects
+
+
+CAP Theorem and BASE
+  -how and why NoSQL databases are scaleable and good for big data
+  -not ACID Theorem
+  -you can only have two of these:
+    -consistency: all users have access to the same data in the system at the same time
+    -availability: the data is always available for users
+    -partition tolerance: the system works accross a distributed network
+
+SQL has one node, and NoSQL has many
+  -SQL builds vertically
+  -NoSQL scales horizontally
+
+
+BASE: show how requiremtns of CAP can be loosened enough that every condition is more or less met
+
+  basically available, have a soft state, and eventually consistent
+  -when a system is basically available, data is available most of the time
+  -soft state: may update even when it hasn't been written to
+  -eventual consistency

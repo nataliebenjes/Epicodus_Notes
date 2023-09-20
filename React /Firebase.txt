@@ -1,0 +1,28 @@
+Backends-as-a-service (BaaS)
+
+  -cloud-based
+    exists online
+  -Realtime
+    we can see database changes immediately in our online dashboard
+  -FireBase
+  -others include
+    -Amazon Web Services
+    -Auth0
+    -Backendless
+  Benefits of BaaS
+    -decreased development time
+    -smaller learning curve
+    -scalability
+      -already designed to handle high traffic
+    -Multiple features in one
+      -once one feature is integrated, it's easier to add more
+  Drawbacks of BaaS
+    -Lack of control
+    -cost
+    -Stability
+      -BaaS could close doors
+  Firebase vs FireStore
+    -firebase realtime database stores all data in a large JSON object
+      -more difficult to query
+    -databse option provided by firebase  : easier querying
+    

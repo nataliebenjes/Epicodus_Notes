@@ -1,0 +1,5 @@
+where clause
+  -used to filter data
+  where() takes 3 arg (feild name, operator, value that the field should have)
+    -doc to filter by, comparison operator, value to match
+  -you can do complex queries if they are in the same feild
