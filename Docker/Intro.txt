@@ -1,0 +1,21 @@
+package app
+  -node 
+  -mongo
+  -app
+
+benefits:
+  -keeps track of versions used in specific apps
+    ex: one app may use node 14, another app uses node 9
+  -we can safely remove an application with all of its dependencies
+  -consistently build, run, and ship aplications
+
+container vs virtual machine
+  -mac can run windows or linux with a hypervisor
+  -vitual machine lets us run an application in isolation: has exact dependencies that it needs
+  -problem w/ vitual machine:
+    -each VM needs OS
+      -slow, resource intensive
+  -container: run multi apps in isolation
+    -use OS of host
+      -lightweight
+      -start quickly
